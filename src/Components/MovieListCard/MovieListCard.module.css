@@ -1,0 +1,19 @@
+.movie {
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+}
+.box{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.info {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    margin: 10px 5px;
+}
+.info div{
+    padding: 5px;
+}
