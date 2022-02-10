@@ -1,9 +1,10 @@
-import {apiKey, page, urls} from "../urlComponents";
+import {urlComponent} from "../urlComponents";
 import {axiosMovieService} from "./axiosService";
+import {urls} from "../urls/urls";
 
 
 export const movieService = {
-    getAll: () => axiosMovieService.get(`${urls.movies}${apiKey}`).then(value => value.data.results),
-    getPage: (index) => axiosMovieService.get(`${urls.movies}${apiKey}${page}${index}`).then(value => value.data),
-    getById: (id) => axiosMovieService.get(`${urls.movie}/${id}${apiKey}`).then(value => value.data)
+    getAll: (page, genreId) => axiosMovieService.get(`${urls.movies}${urlComponent.apiKey}${urlComponent.page}${page}${urlComponent.genres}${genreId}`),
+    getPage: (page) => axiosMovieService.get(`${urls.movies}${urlComponent.apiKey}${urlComponent.page}${page}`).then(value => value.data),
+    getById: (id) => axiosMovieService.get(`${urls.movie}/${id}${urlComponent.apiKey}`).then(value => value.data)
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import {Route, Routes} from "react-router-dom";
+
 import {MovieInfo, MoviesList, MoviesListCard} from "./Components";
 import {MoviesPage, NotFoundPage} from "./Pages";
 
@@ -11,7 +12,7 @@ const App = () => {
                     <Route path='movie' element={<MoviesList/>}>
                         <Route path=':id' element={<MoviesListCard/>}/>
                     </Route>
-                    <Route path='movie/:id/info' element={<MovieInfo/>}/>
+                    <Route path='movie/:id/info/' element={<MovieInfo/>}/>
                     <Route path={"*"} element={<NotFoundPage/>}/>
                 </Route>
 
