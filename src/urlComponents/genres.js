@@ -1,1 +1,0 @@
-export const genres = '&with_genres=';

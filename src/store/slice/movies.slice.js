@@ -1,19 +1,19 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {movieService} from "../../service/movieService";
+import {setTotalPages} from "./pages.slice";
 
 const initialState = {
     movies: [],
-    movie: {},
-    page: 1,
-    genre: ''
+    movie: {}
 }
 export const getAllMovies = createAsyncThunk(
-    'movieSlice/getAllMovies',
+    'moviesSlice/getAllMovies',
     async (page, {dispatch, getState}) => {
         const state = getState();
         try {
-            const {data} = await movieService.getAll(page, state.movies.genre);
+            const {data} = await movieService.getAll(page, state.genres.genre);
             dispatch(setMovie(data.results))
+            dispatch(setTotalPages(data.total_pages))
             return data
         } catch (e) {
             console.log(e)
@@ -21,7 +21,7 @@ export const getAllMovies = createAsyncThunk(
     }
 )
 export const getMovieById = createAsyncThunk(
-    'movieSlice/getMovieById',
+    'moviesSlice/getMovieById',
     async ({id}, {dispatch}) => {
         try {
             const movie = await movieService.getById(id)
@@ -32,8 +32,8 @@ export const getMovieById = createAsyncThunk(
     }
 )
 
-const movieSlice = createSlice({
-    name: 'movieSlice',
+const moviesSlice = createSlice({
+    name: 'moviesSlice',
     initialState,
     reducers: {
         setMovie: ((state, action) => {
@@ -41,21 +41,9 @@ const movieSlice = createSlice({
         }),
         setMovieById: ((state, action) => {
             state.movie = action.payload.data
-        }),
-        setPage: ((state, action) => {
-            if (action.payload.data === 'first') {
-                state.page = 1
-            } else if (action.payload.data === 'prev') {
-                state.page = state.page - 1
-                if (state.page < 1) {
-                    state.page = 1
-                }
-            } else if (action.payload.data === 'next') {
-                state.page = state.page + 1
-            }
         })
     }
 })
-const movieReducer = movieSlice.reducer
-export const {setMovie, setMovieById, setPage} = movieSlice.actions;
-export default movieReducer
+const moviesReducer = moviesSlice.reducer
+export const {setMovie, setMovieById} = moviesSlice.actions;
+export default moviesReducer

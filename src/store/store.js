@@ -1,10 +1,14 @@
 import {configureStore} from "@reduxjs/toolkit";
 
-import movieReducer from "./slice/movie.slice";
+import genreReducer from "./slice/genres.slice";
+import pageReducer from "./slice/pages.slice";
+import moviesReducer from "./slice/movies.slice";
 
 const store = configureStore({
     reducer: {
-        movies:movieReducer
+        movies: moviesReducer,
+        genres: genreReducer,
+        pages: pageReducer
     }
 })
 export default store

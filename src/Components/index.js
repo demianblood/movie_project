@@ -1,9 +1,9 @@
-export * from './GenreBadge'
-export * from './Header'
+export * from './GenreBadge/GenreBadge'
+export * from './Header/Header'
 export * from './MoviesList/MoviesList'
 export * from './MovieListCard/MoviesListCard'
-export * from './MovieInfo'
+export * from './MovieInfo/MovieInfo'
 export * from './PosterPreview'
 export * from './StarsRating'
 export * from './UserInfo'
-
+export * from './Footer/Footer'
