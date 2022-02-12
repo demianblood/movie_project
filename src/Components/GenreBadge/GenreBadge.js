@@ -1,23 +1,25 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
+
 import {getAllGenres, setGenre, setPage} from "../../store/slice";
+import css from './GenreBarge.module.css'
 
 const GenreBadge = () => {
-    const {genres} = useSelector(state => state.genres);
+    const {allGenres} = useSelector(state => state.genres);
     const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(getAllGenres())
     }, [])
     return (
-        <div>
+        <div className={css.genreBox}>
             {
-                genres.map(genre =>
+                allGenres.map(genre =>
                     <button key={genre.id}
                             onClick={() => {
                                 dispatch(setGenre({data: genre.id.toString()}))
                                 dispatch(setPage({data: 1}))
-                            }}>{genre.name}</button>)
+                            }} className={css.btnLink}>{genre.name}</button>)
             }
         </div>
     );

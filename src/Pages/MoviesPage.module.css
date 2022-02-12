@@ -1,0 +1,8 @@
+.mainContentDark {
+    display: flex;
+    background-color: black;
+}
+.mainContentWhite{
+    display: flex;
+    background-color:#EDEFEA;
+}

@@ -1,0 +1,50 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 10%;
+    background-color: black;
+    position: fixed;
+}
+
+
+.linksBlock {
+    display: flex;
+    column-gap: 5%;
+    align-items: center;
+}
+
+.linkForPage {
+    margin: 0 20px;
+    text-decoration: none;
+    color: #EDEFEA;
+}
+
+.userBlock {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    color: #EDEFEA;
+    margin: 0 2%;
+}
+
+.userImage {
+    border-radius: 100%;
+    width: 50px;
+    margin: 5px;
+}
+
+.btnBlock {
+    display: flex;
+    align-items: center;
+    margin: 0 2%;
+}
+
+.btn {
+    border-radius: 10px;
+    color: #EDEFEA;
+    background-color: #F1981A;
+    border-color: black;
+    padding: 5px 10px;
+}

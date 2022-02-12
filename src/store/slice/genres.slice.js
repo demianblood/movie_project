@@ -2,7 +2,7 @@ import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {genresService} from "../../service/genresService";
 
 const initialState = {
-    genres: [],
+    allGenres: [],
     genre: ''
 }
 export const getAllGenres = createAsyncThunk(
@@ -21,7 +21,7 @@ const genresSlice = createSlice({
     initialState,
     reducers: {
         setGenres: ((state, action) => {
-            state.genres = action.payload.data
+            state.allGenres = action.payload.data
         }),
         setGenre: ((state, action) => {
             state.genre = action.payload.data

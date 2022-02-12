@@ -1,11 +1,16 @@
-.thisPage{
-    border: 2px solid gray;
-    font-weight: 700;
+.footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+    background-color: black;
+    border-top: 5px solid #F1981A;
 }
-.page, .thisPage {
-    border: 1px solid lightgray;
-    border-radius: 100%;
+
+.btn {
+    border-radius: 10px;
+    color: #EDEFEA;
+    background-color: #F1981A;
+    border-color: black;
     padding: 5px 10px;
-    margin: 0 10px;
-    cursor: pointer;
 }

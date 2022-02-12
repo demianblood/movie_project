@@ -1,3 +1,24 @@
+.whiteTheme{
+}
 .movieBox {
     display: flex;
+    margin-top: 70px;
+    flex-wrap: wrap;
+    margin-left: 15%;
+}
+.image{
+    width: 450px;
+}
+.someProductInfo{
+    display: flex;
+    flex-direction: column;
+}
+
+.movieInformationBox {
+    width: 40%;
+    padding-left: 10%;
+}
+.darkTheme{
+    padding: 10px;
+    color: #EDEFEA;
 }
