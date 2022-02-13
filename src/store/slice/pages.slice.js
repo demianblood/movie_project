@@ -17,7 +17,9 @@ const pagesSlice = createSlice({
                     state.page = 1
                 }
             } else if (action.payload.data === 'next') {
-                state.page = state.page + 1
+                if (state.totalPages !== action.payload.data) {
+                    state.page = state.page + 1
+                }
             } else if (action.payload.data === 'first') {
                 state.page = 1
             } else if (action.payload.type === 'clickPage') {
@@ -33,5 +35,5 @@ const pagesSlice = createSlice({
     }
 })
 const pageReducer = pagesSlice.reducer
-export const {setPage, setTotalPages,changeTheme} = pagesSlice.actions
+export const {setPage, setTotalPages, changeTheme} = pagesSlice.actions
 export default pageReducer
